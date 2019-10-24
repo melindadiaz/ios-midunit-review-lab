@@ -9,6 +9,11 @@ Input: `Hello, there`
 
 Output: `HELLO, THERE`
 
+```
+str = "Hello there"
+print(str.uppercased())
+```
+
 2. **Given a String, return a String alternating between uppercase and lowercase letters**
 
 
@@ -16,12 +21,34 @@ Input: `Hello, there`
 
 Output: `HeLlO, tHeRe`
 
+```
+var str = "Hello, there"
+var newStr = "" 
+for (index, char) in str.enumerated() {
+    if index % 2 == 0 {
+        newStr.append(char.uppercased())
+    } else if index % 2 == 1 {
+        newStr.append(char.lowercased())
+    }
+}
+print(newStr)
+//append means that it is adding your character and moving it to the new string
+```
 
 3. **Given a String, return a String with all occurrences of a given letter removed**
 
 Input: `Hello, there`
 
 Output: `Hllo, thr`
+```/// You can use where in For-in loops
+var str = "Hello, there"
+var letter = "e"
+var newStr = ""
+for char in str where String(char) != letter {
+        newStr.append(char)
+    }
+print(newStr)
+```
 
 
 ## Arrays
@@ -77,6 +104,18 @@ Output: `3`
 Input: `[nil, "We", "come", nil, "in", "peace"]`
 
 Output: `["We", "come", "in", "peace"]`
+```
+var input = [nil, "We", "come", nil, "in", "peace"]
+var output = [String]()
+func returnNonNilValue(arr:[String?]) -> [String] {
+for word in arr {
+if let unwrappedWord = word {
+output.append(unwrappedWord)
+}
+}
+return output
+}
+```
 
 2. **Given an array of type [String?]? return an array of [String] removing all nil values**
 
