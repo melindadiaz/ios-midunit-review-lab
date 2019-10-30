@@ -115,6 +115,16 @@ output.append(unwrappedWord)
 }
 return output
 }
+
+var input = [nil, "We", "come", nil, "in", "peace"]
+var output = [String]()
+func returnNonNilValue(arr:[String?]) -> [String] {
+    for word in arr {
+        output.append(word ?? "not a string")
+    }
+    return output
+}
+print(returnNonNilValue(arr: input))
 ```
 
 2. **Given an array of type [String?]? return an array of [String] removing all nil values**
